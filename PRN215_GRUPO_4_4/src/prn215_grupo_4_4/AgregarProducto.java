@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class AgregarProducto extends javax.swing.JFrame {
     //PERMITE INSERTAR ELEMENTOS EN TIEMPO CONSTANTE
     public static LinkedList contenedor2 = new LinkedList();
-
+    //PRUEBA DE REPOSITORIO
     public AgregarProducto() {
         initComponents();
         //PONER LA VENTANA EN MEDIO DE LA PANTALLA
