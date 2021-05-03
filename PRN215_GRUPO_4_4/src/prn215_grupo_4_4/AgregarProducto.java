@@ -5,15 +5,15 @@ package prn215_grupo_4_4;
 import Clases.Cliente;
 import Clases.Persona;
 import Clases.Producto;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
 public class AgregarProducto extends javax.swing.JFrame {
-
     //PERMITE INSERTAR ELEMENTOS EN TIEMPO CONSTANTE
-    public static LinkedList contenedor = new LinkedList();
+    public static LinkedList contenedor2 = new LinkedList();
 
     public AgregarProducto() {
         initComponents();
@@ -28,6 +28,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         jCBCategorias.addItem("Telefonos");
         jCBCategorias.addItem("Vehiculos");
     }
+
   
 
      
@@ -370,7 +371,7 @@ public class AgregarProducto extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Datos Errones,Ingrese valores positivos"+" "+
                                                "en el costo y en el precio venta");
             }else{
-            contenedor.add(producto);         
+            contenedor2.add(producto);         
             //LIMPIAMOS LOS CAMPOS.
             jTMarca.setText("");
             jTNombreProducto.setText("");
@@ -398,6 +399,9 @@ public class AgregarProducto extends javax.swing.JFrame {
         dispose();
         frmProductos mostrar = new frmProductos();
         mostrar.setVisible(true);
+   
+        
+
     }//GEN-LAST:event_jBMostrarDatosActionPerformed
 
     private void jTSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTSerieKeyTyped

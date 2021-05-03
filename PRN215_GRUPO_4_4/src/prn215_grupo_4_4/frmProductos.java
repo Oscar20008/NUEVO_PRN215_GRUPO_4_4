@@ -1,55 +1,51 @@
 
 package prn215_grupo_4_4;
 
-import Clases.Cliente;
-import Clases.Persona;
 import Clases.Producto;
-import java.awt.Color;
-import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static prn215_grupo_4_4.AgregarCliente.contenedor;
+import java.util.ArrayList;
+import static prn215_grupo_4_4.AgregarProducto.contenedor2;
 
 
 public class frmProductos extends javax.swing.JFrame {
-    private DefaultTableModel modelo;
+    private DefaultTableModel modelo2;
     int contador=0;
 
     public frmProductos() {
         initComponents();
         CargarInterfaz();
         CargarDatos();
+
         //PONER LA VENTANA EN MEDIO DE LA PANTALLA
-        this.setLocationRelativeTo(null);
-        
+        this.setLocationRelativeTo(null);       
     }
-    //METODO CARGAR INTERFAZ
+
+//    METODO CARGAR INTERFAZ
     public void CargarInterfaz(){
         String datos[][]={};
         String columna[]= {"Codigo","Nombre","Marca","Modelo","N.serie","Caracteristicas", "Categoria","Costo","estado","Precio venta"};
-        modelo= new DefaultTableModel(datos,columna);
-        jTControlProductos.setModel(modelo);
+        modelo2= new DefaultTableModel(datos,columna);
+        jTControlProductos.setModel(modelo2);
     }
     
-    //METODO CARGAR DATOS
+//    METODO CARGAR DATOS
     public void CargarDatos(){
         Producto a;
-        for (int i = 0; i < AgregarProducto.contenedor.size(); i++) {
-            a=(Producto)AgregarProducto.contenedor.get(i);
-            modelo.insertRow(contador,new Object[]{} );
-            modelo.setValueAt("PROD"+a.getIdProducto(),contador,0);
-            modelo.setValueAt(a.getNombre(),contador,1);
-            modelo.setValueAt(a.getMarca(),contador,2);
-            modelo.setValueAt(a.getModelo(),contador,3);
-            modelo.setValueAt(a.getNumeroSerie(),contador,4);
-            modelo.setValueAt(a.getCaracteristicas(),contador,5);
-            modelo.setValueAt(a.getCategoria(),contador,6);
-            modelo.setValueAt(a.getCosto(),contador,7);
-            modelo.setValueAt(a.getEstado(),contador,8);
-            modelo.setValueAt(a.getPrecioVenta(),contador,9);
+        for (int i = 0; i < AgregarProducto.contenedor2.size(); i++) {
+            a=(Producto)AgregarProducto.contenedor2.get(i);
+            modelo2.insertRow(contador,new Object[]{} );
+            modelo2.setValueAt("PROD"+a.getIdProducto(),contador,0);
+            modelo2.setValueAt(a.getNombre(),contador,1);
+            modelo2.setValueAt(a.getMarca(),contador,2);
+            modelo2.setValueAt(a.getModelo(),contador,3);
+            modelo2.setValueAt(a.getNumeroSerie(),contador,4);
+            modelo2.setValueAt(a.getCaracteristicas(),contador,5);
+            modelo2.setValueAt(a.getCategoria(),contador,6);
+            modelo2.setValueAt(a.getCosto(),contador,7);
+            modelo2.setValueAt(a.getEstado(),contador,8);
+            modelo2.setValueAt(a.getPrecioVenta(),contador,9);
         }
-          
-
     }
 
     @SuppressWarnings("unchecked")
@@ -258,16 +254,15 @@ public class frmProductos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarProductoActionPerformed
-        int FilaSelect = jTControlProductos.getSelectedRow();
+                int FilaSelect = jTControlProductos.getSelectedRow();
         if (FilaSelect>=0) {
 
-            modelo.removeRow(FilaSelect);
-            AgregarProducto.contenedor.size();
-            contenedor.remove(FilaSelect);
+            modelo2.removeRow(FilaSelect);
+            contenedor2.remove(FilaSelect);
         }
-
+        
         else{
-            JOptionPane.showMessageDialog(rootPane, "Seleccione el el producto que desea eliminar en la tabla");
+            JOptionPane.showMessageDialog(rootPane, "Seleccione el cliente que desea eliminar en la tabla");
         }
     }//GEN-LAST:event_jBEliminarProductoActionPerformed
 
